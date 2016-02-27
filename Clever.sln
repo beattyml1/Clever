@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleverTest", "CleverTest\CleverTest.csproj", "{E366C3FE-886D-41A1-90E9-D629FF94EBA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Tests", "Clever.Tests\Clever.Tests.csproj", "{D679B659-B1F6-4D46-B297-B7E5230D3111}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{DDF4C4A0-9EAE-494B-878D-D8DA15B98478}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8C54F625-CAFF-46F6-8EB5-0AEDC91DD20F}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{BFA7318B-C894-4E40-A05D-D3064655358A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\CleverTest.json = PublishScripts\Templates\CleverTest.json
+		PublishScripts\Templates\CleverTest.param.dev.json = PublishScripts\Templates\CleverTest.param.dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Web", "Clever.Web\Clever.Web.csproj", "{0CE03FCC-66D2-4CB3-88B7-EBA318B84A88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Service", "Clever.Service\Clever.Service.csproj", "{D6618C5F-EB68-4531-A4E2-41BD1AFFE38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Repository", "Clever.Repository\Clever.Repository.csproj", "{2888DA5B-092B-4EF0-A0F2-B2948BC5064D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.All", "Clever.All\Clever.All.csproj", "{F7313B5B-57BB-4831-AA80-77F2B057E67B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Mapping", "Clever.Mapping\Clever.Mapping.csproj", "{51F5E89E-443B-412C-BDEE-A500DDE90D66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Function", "Clever.Function\Clever.Function.csproj", "{BEE83F47-4D97-4BCF-ACC2-0C105285A64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Web.React", "Clever.Web.React\Clever.Web.React.csproj", "{681BD92F-D459-4647-BF77-51D5A4DAFD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.Collection", "Clever.Collection\Clever.Collection.csproj", "{EFB81267-3955-49F4-B43B-42924095E6DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.WebApi", "Clever.WebApi\Clever.WebApi.csproj", "{57B4D7AE-EDBE-4E66-A771-5C789C3E07AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.WebView", "Clever.WebView\Clever.WebView.csproj", "{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E366C3FE-886D-41A1-90E9-D629FF94EBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E366C3FE-886D-41A1-90E9-D629FF94EBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E366C3FE-886D-41A1-90E9-D629FF94EBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E366C3FE-886D-41A1-90E9-D629FF94EBA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D679B659-B1F6-4D46-B297-B7E5230D3111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D679B659-B1F6-4D46-B297-B7E5230D3111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D679B659-B1F6-4D46-B297-B7E5230D3111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D679B659-B1F6-4D46-B297-B7E5230D3111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE03FCC-66D2-4CB3-88B7-EBA318B84A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE03FCC-66D2-4CB3-88B7-EBA318B84A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE03FCC-66D2-4CB3-88B7-EBA318B84A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE03FCC-66D2-4CB3-88B7-EBA318B84A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6618C5F-EB68-4531-A4E2-41BD1AFFE38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6618C5F-EB68-4531-A4E2-41BD1AFFE38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6618C5F-EB68-4531-A4E2-41BD1AFFE38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6618C5F-EB68-4531-A4E2-41BD1AFFE38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2888DA5B-092B-4EF0-A0F2-B2948BC5064D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2888DA5B-092B-4EF0-A0F2-B2948BC5064D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2888DA5B-092B-4EF0-A0F2-B2948BC5064D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2888DA5B-092B-4EF0-A0F2-B2948BC5064D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7313B5B-57BB-4831-AA80-77F2B057E67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7313B5B-57BB-4831-AA80-77F2B057E67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7313B5B-57BB-4831-AA80-77F2B057E67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7313B5B-57BB-4831-AA80-77F2B057E67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F5E89E-443B-412C-BDEE-A500DDE90D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F5E89E-443B-412C-BDEE-A500DDE90D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F5E89E-443B-412C-BDEE-A500DDE90D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F5E89E-443B-412C-BDEE-A500DDE90D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE83F47-4D97-4BCF-ACC2-0C105285A64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE83F47-4D97-4BCF-ACC2-0C105285A64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE83F47-4D97-4BCF-ACC2-0C105285A64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE83F47-4D97-4BCF-ACC2-0C105285A64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681BD92F-D459-4647-BF77-51D5A4DAFD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681BD92F-D459-4647-BF77-51D5A4DAFD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681BD92F-D459-4647-BF77-51D5A4DAFD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681BD92F-D459-4647-BF77-51D5A4DAFD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB81267-3955-49F4-B43B-42924095E6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB81267-3955-49F4-B43B-42924095E6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB81267-3955-49F4-B43B-42924095E6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB81267-3955-49F4-B43B-42924095E6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57B4D7AE-EDBE-4E66-A771-5C789C3E07AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B4D7AE-EDBE-4E66-A771-5C789C3E07AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B4D7AE-EDBE-4E66-A771-5C789C3E07AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B4D7AE-EDBE-4E66-A771-5C789C3E07AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C54F625-CAFF-46F6-8EB5-0AEDC91DD20F} = {DDF4C4A0-9EAE-494B-878D-D8DA15B98478}
+		{BFA7318B-C894-4E40-A05D-D3064655358A} = {DDF4C4A0-9EAE-494B-878D-D8DA15B98478}
+	EndGlobalSection
+EndGlobal
