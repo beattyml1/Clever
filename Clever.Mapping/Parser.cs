@@ -11,8 +11,7 @@ namespace Clever.Mapping
                 .Aggregate(new string[0], ProcessChar)
                 .Where(x => !string.IsNullOrEmpty(x)).ToArray();
         }
-
-
+        
         public static string[] ProcessChar(string[] words, char currentChar)
         {
             var mostRecentChar = GetMostRecentChar(words);
