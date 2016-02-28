@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.WebApi", "Clever.Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.WebView", "Clever.WebView\Clever.WebView.csproj", "{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clever.DependencyInjection", "Clever.DependencyInjection\Clever.DependencyInjection.csproj", "{57C095D3-BD57-40E6-BF27-28F257E7C549}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AE9A4C4-BD47-4D4D-A4DC-12C2B2D5FB81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C095D3-BD57-40E6-BF27-28F257E7C549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C095D3-BD57-40E6-BF27-28F257E7C549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C095D3-BD57-40E6-BF27-28F257E7C549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C095D3-BD57-40E6-BF27-28F257E7C549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
