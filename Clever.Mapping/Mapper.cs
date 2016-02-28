@@ -25,6 +25,21 @@ namespace Clever.Mapping
             map(fromVal, toVal);
         }
 
+        public static void Map(Type tfrom, Type tto, object fromVal, object toVal)
+        {
+            Action<object, object> map;
+            try
+            {
+                map = mappingFunctions[tfrom][tto];
+            }
+            catch
+            {
+                RegisteExactMap(tfrom, tto);
+                map = mappingFunctions[tfrom][tto];
+            }
+            map(fromVal, toVal);
+        }
+
         public static void RegisteExactMap<TFrom, TTo>()
         {
             RegisterMap<TFrom, TTo>(PropertiesAreExactMatch);
@@ -33,6 +48,16 @@ namespace Clever.Mapping
         public static void RegisterWordMap<TFrom, TTo>()
         {
             RegisterMap<TFrom, TTo>(PropertiesAreWordMatch);
+        }
+
+        public static void RegisteExactMap(Type tfrom, Type tto)
+        {
+            RegisterMap(tfrom, tto, PropertiesAreExactMatch);
+        }
+
+        public static void RegisterWordMap(Type tfrom, Type tto)
+        {
+            RegisterMap(tfrom, tto, PropertiesAreWordMatch);
         }
 
         public static void RegisterMap<TFrom, TTo>(Func<string, string, bool> matchFunction)
