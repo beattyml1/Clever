@@ -73,6 +73,11 @@ namespace Clever.Mapping
             return GetLowerWords(first) == GetLowerWords(second);
         }
 
+        public static string[] GetAdditionalMappingFromAttributes(PropertyInfo property)
+        {
+            return property.CustomAttributes.OfType<MapToAttribute>().SelectMany(x => x.Properties).ToArray();
+        }
+
         public static string[] GetLowerWords(string identifier)
         {
             return Parser.GetWords(identifier).Select(x => x.ToLower()).ToArray();
@@ -93,9 +98,19 @@ namespace Clever.Mapping
         {
             return (from p1 in t1.GetProperties()
                     from p2 in t1.GetProperties()
-                    where matchFunction(p1.Name, p2.Name)
+                    where matchFunction(p1.Name, p2.Name) || AttributeMapMatch(p1, p2, matchFunction)
                     select new KeyValuePair<PropertyInfo, PropertyInfo>(p1, p2))
                     .ToDictionary();
+        }
+
+        public static bool AttributeMapMatch(PropertyInfo prop1, string prop2Name, Func<string, string, bool> matchFunction)
+        {
+            return GetAdditionalMappingFromAttributes(prop1).Any(x => matchFunction(x, prop2Name));
+        }
+
+        public static bool AttributeMapMatch(PropertyInfo prop1, PropertyInfo prop2, Func<string, string, bool> matchFunction)
+        {
+            return AttributeMapMatch(prop1, prop2.Name, matchFunction) || AttributeMapMatch(prop2, prop1.Name, matchFunction);
         }
 
         private static readonly Dictionary<Type, Dictionary<Type, Action<object, object>>> mappingFunctions = new Dictionary<Type, Dictionary<Type, Action<object, object>>>();
