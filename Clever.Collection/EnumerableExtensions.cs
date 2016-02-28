@@ -84,5 +84,10 @@ namespace Clever.Collection
         {
             return source.GroupAndAggregate(keySelector, valueSelector, initialValue, (cur, acc) => cur + acc);
         }
+
+        public static IEnumerable<T> Concat<T>(this IEnumerable<T> array, T item)
+        {
+            return array.Concat(new[] { item });
+        }
     }
 }

@@ -42,7 +42,18 @@
   <ItemGroup>
     <Compile Include="Mapper.cs" />
     <Compile Include="Merge.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clever.Collection\Clever.Collection.csproj">
+      <Project>{efb81267-3955-49f4-b43b-42924095e6dc}</Project>
+      <Name>Clever.Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clever.Function\Clever.Function.csproj">
+      <Project>{bee83f47-4d97-4bcf-acc2-0c105285a64a}</Project>
+      <Name>Clever.Function</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
