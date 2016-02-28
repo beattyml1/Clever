@@ -32,42 +32,42 @@ namespace Clever.Service
             this.resourceService = resourceService;
         }
 
-        public ServiceOption<TEditorViewModel> Create()
+        public virtual ServiceOption<TEditorViewModel> Create()
         {
             return new TEditorViewModel { Model = new TGetOne() };
         }
 
-        public ServiceOption<TCreateResult> Create(TPost collection)
+        public virtual ServiceOption<TCreateResult> Create(TPost collection)
         {
             return resourceService.Post(collection);
         }
 
-        public ServiceOption<TDeleteResult> Delete(TId id)
+        public virtual ServiceOption<TDeleteResult> Delete(TId id)
         {
             return resourceService.Delete(id);
         }
 
-        public ServiceOption<TDetailViewModel> Details(TId id)
+        public virtual ServiceOption<TDetailViewModel> Details(TId id)
         {
             return resourceService.Get(id).PossiblyTransform(val => new TDetailViewModel { Model =  val });
         }
 
-        public ServiceOption<TEditorViewModel> Edit(TId id)
+        public virtual ServiceOption<TEditorViewModel> Edit(TId id)
         {
             return resourceService.Get(id).PossiblyTransform(val => new TEditorViewModel { Model = val });
         }
 
-        public ServiceOption<TEditResult> Edit(TId id, TPut collection)
+        public virtual ServiceOption<TEditResult> Edit(TId id, TPut collection)
         {
             return resourceService.Put(id, collection);
         }
 
-        public ServiceOption<TIndexViewModel> Index()
+        public virtual ServiceOption<TIndexViewModel> Index()
         {
             return resourceService.Get(default(TQuery)).PossiblyTransform(val => new TIndexViewModel { Models = val });
         }
 
-        public ServiceOption<TIndexViewModel> Index(TQuery query)
+        public virtual ServiceOption<TIndexViewModel> Index(TQuery query)
         {
             return resourceService.Get(query).PossiblyTransform(val => new TIndexViewModel { Models = val });
         }

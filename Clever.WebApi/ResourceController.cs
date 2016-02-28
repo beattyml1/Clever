@@ -25,27 +25,27 @@ namespace Clever.WebApi
             this.resourceService = resourceService;
         }
 
-        public HttpResponseMessage Delete(TId id)
+        public virtual HttpResponseMessage Delete(TId id)
         {
             return HandleErrors(() => resourceService.Delete(id, GetSession()));
         }
 
-        public HttpResponseMessage Get(TQuery query)
+        public virtual HttpResponseMessage Get(TQuery query)
         {
             return HandleErrors(() => resourceService.Get(query, GetSession()));
         }
 
-        public HttpResponseMessage Get(TId id)
+        public virtual HttpResponseMessage Get(TId id)
         {
             return HandleErrors(() => resourceService.Get(id, GetSession()));
         }
 
-        public HttpResponseMessage Post(TPost data)
+        public virtual HttpResponseMessage Post(TPost data)
         {
             return HandleErrors(() => resourceService.Post(data, GetSession()));
         }
 
-        public HttpResponseMessage Put(TId id, TPut data)
+        public virtual HttpResponseMessage Put(TId id, TPut data)
         {
             return HandleErrors(() => resourceService.Put(id, data, GetSession()));
         }
