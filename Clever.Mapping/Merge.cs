@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Clever.Mapping
+﻿namespace Clever.Mapping
 {
     public static class Merger
     {
