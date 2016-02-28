@@ -59,7 +59,7 @@ namespace Clever.WebApi
             {
                 return something().ToHttpResponseMessage(Request);
             }
-            catch(NotImplementedException e)
+            catch(NotImplementedException)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotImplemented, String.Format("Method {0} not implemented or not supported for resource {1}", Request.Method, Request.RequestUri.AbsolutePath));
             }

@@ -70,7 +70,7 @@ namespace Clever.Collection
             return source.GroupAndAggregate(keySelector, valueSelector, initialValue, (cur, acc) => cur + acc);
         }
 
-        public static Dictionary<TKey, long> GroupAndSum<T, TKey>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, long> valueSelector, long initialValue = 0l)
+        public static Dictionary<TKey, long> GroupAndSum<T, TKey>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, long> valueSelector, long initialValue = 0L)
         {
             return source.GroupAndAggregate(keySelector, valueSelector, initialValue, (cur, acc) => cur + acc);
         }
