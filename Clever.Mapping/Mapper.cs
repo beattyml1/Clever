@@ -30,6 +30,11 @@ namespace Clever.Mapping
             RegisterMap<TFrom, TTo>(PropertiesAreExactMatch);
         }
 
+        public static void RegisterWordMap<TFrom, TTo>()
+        {
+            RegisterMap<TFrom, TTo>(PropertiesAreWordMatch);
+        }
+
         public static void RegisterMap<TFrom, TTo>(Func<string, string, bool> matchFunction)
         {
             RegisterMap(typeof(TFrom), typeof(TTo), matchFunction);
