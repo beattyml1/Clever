@@ -23,8 +23,8 @@ namespace Clever.WebView
     public class ViewResourceController<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TGetOne, TGetMany, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TSession> 
         : Controller, IViewResourceController<TId>
     {
-        protected readonly IViewService<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TPut, TPost, TEditResult, TDeleteResult, TCreateResult> viewService;
-        public ViewResourceController(IViewService<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TPut, TPost, TEditResult, TDeleteResult, TCreateResult> viewService)
+        protected readonly IViewService<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TGetOne, TGetMany> viewService;
+        public ViewResourceController(IViewService<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TGetOne, TGetMany> viewService)
         {
             this.viewService = viewService;
         }
@@ -95,6 +95,16 @@ namespace Clever.WebView
         public virtual ActionResult IndexJson(TQuery query)
         {
             return Json(viewService.Index(query));
+        }
+
+        public virtual ActionResult Data(TId id)
+        {
+            return View(viewService.Edit(id));
+        }
+
+        public virtual ActionResult Data()
+        {
+            return View(viewService.Index());
         }
     }
 }
