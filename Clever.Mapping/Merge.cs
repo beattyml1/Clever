@@ -17,7 +17,7 @@
             return baseVal;
         }
 
-        public static TDest ConvertTo<TSrc, TDest>(this object src, bool ignoreNulls = false) where TDest: new()
+        public static TDest ConvertTo<TDest>(this object src, bool ignoreNulls = false) where TDest: new()
         {
             var result = new TDest();
             result.Populate(src);
