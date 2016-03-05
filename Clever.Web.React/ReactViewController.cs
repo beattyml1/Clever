@@ -10,15 +10,23 @@ using React.Web;
 using React;
 using System.Web.Razor;
 using System.IO;
+using React.Web.Mvc;
 
 namespace Clever.Web.React
 {
-    public class ReactViewResourceController<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TGetOne, TGetMany, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TSession>
+    public abstract class ReactViewResourceController<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TGetOne, TGetMany, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TSession>
         : ViewResourceController<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TGetOne, TGetMany, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TSession>
     {
         public ReactViewResourceController(IViewService<TId, TQuery, TIndexViewModel, TDetailViewModel, TEditorViewModel, TPut, TPost, TEditResult, TDeleteResult, TCreateResult, TGetOne, TGetMany> viewService)
             : base(viewService)
         {
+        }
+
+        public string RenderReactComponent(string name, object[] properties)
+        {
+            var textWriter = new StringWriter();
+            var h = new HtmlHelper(new ViewContext(ControllerContext, new WebFormView(ControllerContext, "omg"), new ViewDataDictionary(), new TempDataDictionary(), textWriter), new ViewPage());
+            return h.React(name, properties).ToHtmlString();
         }
 
         //public void DoRazorThings()
