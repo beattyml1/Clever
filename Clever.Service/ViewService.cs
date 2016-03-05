@@ -25,8 +25,8 @@ namespace Clever.Service
         where TEditorViewModel : ViewModel<TGetOne>, new()
         where TGetOne: new()
     {
-        protected readonly IResourceService<TId, TGetOne, TGetMany, TQuery, TPost, TCreateResult, TPut, TEditResult, TDeleteResult, TSession> resourceService;
-        public ViewService(IResourceService<TId, TGetOne, TGetMany, TQuery, TPost, TCreateResult, TPut, TEditResult, TDeleteResult, TSession> resourceService)
+        protected readonly IResourceService<TId, TGetOne, TGetMany, TQuery, TPost, TCreateResult, TPut, TEditResult, TDeleteResult> resourceService;
+        public ViewService(IResourceService<TId, TGetOne, TGetMany, TQuery, TPost, TCreateResult, TPut, TEditResult, TDeleteResult> resourceService)
         {
             this.resourceService = resourceService;
         }

@@ -19,35 +19,35 @@ namespace Clever.WebApi
     public abstract class ResourceControler<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn, TSession>
         : ApiController, IResourceController<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn, TSession>
     {
-        protected readonly IResourceService<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn, TSession> resourceService;
-        public ResourceControler(IResourceService<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn, TSession> resourceService)
+        protected readonly IResourceService<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn> resourceService;
+        public ResourceControler(IResourceService<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn> resourceService)
         {
             this.resourceService = resourceService;
         }
 
         public virtual HttpResponseMessage Delete(TId id)
         {
-            return HandleErrors(() => resourceService.Delete(id, GetSession()));
+            return HandleErrors(() => resourceService.Delete(id));
         }
 
         public virtual HttpResponseMessage Get(TQuery query)
         {
-            return HandleErrors(() => resourceService.Get(query, GetSession()));
+            return HandleErrors(() => resourceService.Get(query));
         }
 
         public virtual HttpResponseMessage Get(TId id)
         {
-            return HandleErrors(() => resourceService.Get(id, GetSession()));
+            return HandleErrors(() => resourceService.Get(id));
         }
 
         public virtual HttpResponseMessage Post(TPost data)
         {
-            return HandleErrors(() => resourceService.Post(data, GetSession()));
+            return HandleErrors(() => resourceService.Post(data));
         }
 
         public virtual HttpResponseMessage Put(TId id, TPut data)
         {
-            return HandleErrors(() => resourceService.Put(id, data, GetSession()));
+            return HandleErrors(() => resourceService.Put(id, data));
         }
         
         [NonAction]

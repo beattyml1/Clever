@@ -95,6 +95,11 @@ namespace Clever.Service
             return new ServiceOption<T>(promise);
         }
 
+        public static implicit operator T(ServiceOption<T> option)
+        {
+            return option.Value;
+        }
+
 
         // Functions 
         private ServiceError[] MakeErrorsFor(AggregateException exception)
@@ -123,11 +128,29 @@ namespace Clever.Service
         public ServiceError[] Errors;
     }
 
+    public enum ErrorType
+    {
+        Unknown,
+        ValidationError,
+        ValidationWarning,
+        BadRequest,
+        NotFound,
+        InternalError,
+        NotAuthorized
+    }
+
     public class ServiceError
     {
+        public ErrorType ErrorType { get; set; }
+
         public static ServiceError New(string message)
         {
             return new ServiceError { Message = message };
+        }
+
+        public static ServiceError New(ErrorType errorType, string message)
+        {
+            return new ServiceError { ErrorType = errorType, Message = message };
         }
 
         public string Message { get; set; }

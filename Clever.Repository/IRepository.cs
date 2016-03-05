@@ -1,6 +1,6 @@
 ﻿namespace Clever.Repository
 {
-    public interface IRepository<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn, TSession>
+    public interface IRepository<TId, TGetById, TGetMany, TQuery, TPost, TPostReturn, TPut, TPutReturn, TDeleteReturn>
     {
         TGetById Get(TId id);
         TGetMany[] Get(TQuery query);
