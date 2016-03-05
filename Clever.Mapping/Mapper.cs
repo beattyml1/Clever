@@ -1,5 +1,6 @@
 ﻿using Clever.Collection;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -114,5 +115,20 @@ namespace Clever.Mapping
         }
 
         private static readonly Dictionary<Type, Dictionary<Type, Action<object, object>>> mappingFunctions = new Dictionary<Type, Dictionary<Type, Action<object, object>>>();
+
+        private static void SetPropertyRecursive(Type type, string propertyName, object model, object value, Func<string, string, bool> matchFunction)
+        {
+            var objectProps = type.GetProperties().Where(x => x.PropertyType.IsValueType == false && x.PropertyType.GetInterfaces().Contains(typeof(IEnumerable)) == false);
+            var arrayProps = type.GetProperties().Where(x => x.PropertyType.GetInterfaces().Contains(typeof(IEnumerable)));
+            var valueProps = type.GetProperties().Where(x => x.PropertyType.IsValueType);
+            var matchingProps = valueProps.Where(x => matchFunction(x.PropertyType.Name, propertyName));
+            
+            var objectValueGetters = objectProps.Select(prop => new KeyValuePair<PropertyInfo, Func<object, object>>(prop, (_ => new[] { prop.GetValue(_) })));
+            var objectsInArrayGetters = arrayProps.Select(prop => new KeyValuePair<PropertyInfo, Func<object, object>>(prop, (_ => ((IEnumerable)prop.GetValue(model)).OfType<object>().ToArray())));
+            var objectsToAlterGetters = objectsInArrayGetters.Concat(objectValueGetters).GroupBy(x => x.Key.PropertyType, x => x.Value);
+
+            objectsToAlterGetters.ForEach(tgroup => tgroup.ForEach(o => SetPropertyRecursive(tgroup.Key, propertyName, o, value, matchFunction)));
+            matchingProps.ForEach(x => x.SetValue(model, value));
+        }
     }
 }
