@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +49,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clever.Collection\Clever.Collection.csproj">
+      <Project>{efb81267-3955-49f4-b43b-42924095e6dc}</Project>
+      <Name>Clever.Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clever.DependencyInjection\Clever.DependencyInjection.csproj">
+      <Project>{57c095d3-bd57-40e6-bf27-28f257e7c549}</Project>
+      <Name>Clever.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clever.Function\Clever.Function.csproj">
+      <Project>{bee83f47-4d97-4bcf-acc2-0c105285a64a}</Project>
+      <Name>Clever.Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clever.Mapping\Clever.Mapping.csproj">
+      <Project>{51f5e89e-443b-412c-bdee-a500dde90d66}</Project>
+      <Name>Clever.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clever.Repository\Clever.Repository.csproj">
+      <Project>{2888da5b-092b-4ef0-a0f2-b2948bc5064d}</Project>
+      <Name>Clever.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
